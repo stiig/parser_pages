@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Grab one item:
 
-Things you may want to cover:
+```
+POST /pages/
+```
+Params:
+ * `page[url]` - parsed url
 
-* Ruby version
 
-* System dependencies
+Get all pages with headers and links:
+```
+GET /pages/
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
