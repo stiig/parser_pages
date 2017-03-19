@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PagesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def index

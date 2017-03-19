@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170315072945) do
+ActiveRecord::Schema.define(version: 20170319144602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170315072945) do
   create_table "links", force: :cascade do |t|
     t.integer  "page_id",    null: false
     t.string   "url"
-    t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["page_id"], name: "index_links_on_page_id", using: :btree
@@ -35,9 +34,9 @@ ActiveRecord::Schema.define(version: 20170315072945) do
 
   create_table "pages", force: :cascade do |t|
     t.string   "url"
-    t.boolean  "state",      default: false, null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "state",      default: 0, null: false
   end
 
   add_foreign_key "headers", "pages"
